@@ -1,0 +1,68 @@
+body {
+  background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    font-size: 15pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+.form {
+  margin:10px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  border:1px solid lightgray;
+  border-radius: 10px;
+  backdrop-filter: blur(24px);
+}
+.username input,.password input {
+  flex: 1;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin:10px;
+  padding-left: 10px;
+  padding-right: 45px;
+  background: transparent;
+}
+
+.form button {
+  margin: 10px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+button {
+  font-weight:bold;
+  font-size: 20px;
+  transition: .5s;
+}
+.username ,.password,a  {
+  text-align: center ;
+}
+a {
+  color: white;
+  margin-bottom: 20px;
+}
+.remember {
+  margin:10px;
+}
+.password,.username {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  right:5%;
+  bottom:0;
+  top: 50%;
+}
+button:hover {
+  color:black;
+  background: white;
+}

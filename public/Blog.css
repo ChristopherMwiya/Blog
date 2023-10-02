@@ -1,0 +1,45 @@
+body {
+    font-size: 15pt;
+   padding: 0;
+   margin:0;
+}
+.header {
+  box-shadow: 0px 0px 5px black;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+.header a,a {
+  color: gray;
+  text-decoration: none;
+
+}
+.post {
+  padding: 25px; 
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 20px;
+}
+.title {
+ margin-bottom: 5px;
+color: black;
+}
+.name {
+  margin-bottom: 0;
+  color: gray;
+  font-size: 18px;
+  opacity: 40%;
+  
+}
+.post p::after {
+  content: '...';
+}
+.post p{
+  font-family: Italic;
+  color:#045F36;
+  font-size: 18px;
+}

@@ -1,0 +1,86 @@
+.title,.name {
+  text-align: center;
+}
+p {
+  text-align: left;
+  padding: 17px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header button {
+  width: 40px;
+  height: 35px;
+  border: none;
+  background: white;
+  font-size: 24px;
+}
+.ops {
+  border: 2px solid red;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right:5%;
+  animation-name: anime;
+  animation-duration: 1s;
+}
+.ops1  {
+  border: 2px solid red;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right:5%;
+  opacity: 0;
+  animation-name: anime2;
+  animation-duration: 1s;
+}
+
+@keyframes anime2 {
+  0%{
+    opacity: 100%
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes anime {
+  0%{
+    transform: translateX(100%)
+  }
+  100%{
+    transform: translateX(0%)
+  }
+}
+.ops a {
+   text-decoration: none;
+}
+.ops3 {
+  display: none 
+}
+
+.type {
+  
+}
+#blog {
+
+}
+#news {
+  display: none ;
+
+  
+}
+input {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.btn {
+  border: 1px solid red;
+  background: transparent;
+  padding: 10px;
+}
