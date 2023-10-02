@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fill in The Form</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/login.css">
+  <link rel="stylesheet" href="/password.css">
+</head>
+
+<body>
+  <!-- Project -->
+  <form class="form" action="/" method="post">
+    <div class="username">
+      <label>Username</label>
+      <br />
+       <input name="Name" required placeholder="Username">
+       <div class="icon">
+         👤
+       </div>
+    </div>
+    <div class="password">
+      <label>Password</label>
+      <br>
+      <div class="infor">
+        Limit reached!
+      </div>
+       <input id="password" name="Password" required type="password" placeholder="Password">
+       <div class="icon">
+         👁️
+       </div>
+    </div>
+    <button type="submit">Login</button>
+  <br>
+  <a href="5002/signUp">Sign up</a>
+  <div class="remember">
+   <input type="checkbox">
+   <label>Remember me</label>
+   </div>
+  </form>
+  
+  <script src="/login.js"></script>
+</body>
+</html>

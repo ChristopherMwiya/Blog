@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create a blog!</title>
+  <link rel="stylesheet" href="/detail.css"/>
+  <link rel="stylesheet" href="/toggle.css"/>
+  <style>
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+    .title {
+      width:200px;
+      height: 29px;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+    
+    
+  </style>
+</head>
+<body>
+       <%- include('./partials/header.ejs') %>
+ <h4>blog</h4>
+
+ <div id="container" class="con">
+    <div id="spot" class="spot">
+      
+    </div>
+  </div>
+<h4>News</h4>
+ <form id="blog" action="/Blogs" method="POST">
+     <h1>Create a blog </h1>
+      <input type="text" required class="title" name="title" placeholder="Title">
+    <input required type="text"  class="" name="snippet" placeholder="Type...">
+    <button class="btn" type="submit">Submit</button>
+</form>
+ <form id="news"  action="/News" method="POST">
+     <h1>Information is key 🔐</h1>
+    <input type="text" required  class="title" name="headline" placeholder="Headline">
+    <input type="text" required  class="" name="news" placeholder="what news do you have?">
+    <button class="btn" type="submit">Submit</button>
+</form>
+<script>
+  const con = document.querySelector('#container');
+const spot = document.querySelector('#spot');
+let status = 'unactive';
+  
+  con.addEventListener('click',() => {
+    if(status === 'unactive'){
+    document.querySelector('.con').style = 'background:black;animation-name: conAnime;animation-duration: 1s;'
+    document.querySelector('.spot').style = 'background:white;transform:translateX(100%);animation-name: spotAnime;animation-duration: 1s;'
+    status = 'active'
+    
+  document.querySelector('#news').style = 'display:block'
+  document.querySelector('#blog').style = 'display:none'
+  } else {
+    document.querySelector('.con').style = 'background:white;animation-name: conAnimeRev;animation-duration: 1s;'
+    document.querySelector('.spot').style = 'background:black;transform:translateX(-100%);animation-name: spotAnimeReverse;animation-duration: 1s;';
+    status = 'unactive'
+    document.querySelector('#blog').style = 'display:block'
+    document.querySelector('#news').style = 'display:none'
+  }
+  
+  })
+</script>
+</body>
+</html>

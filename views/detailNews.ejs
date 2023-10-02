@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/detail.css">
+  <title>Detail</title>
+</head>
+<body>
+         <%- include('./partials/header.ejs') %>
+  <div  style="margin-top:60px" class="header">
+    <h1 class="name">Christopher</h1>
+  <button id="ops" >•••</button>
+ 
+  </div>
+   <div id="menu" class="ops3">
+    <a href="#">Edit</a>
+    <hr style="width: 100%">
+    <a id="delete" data-doc="<%=data._id%>">delete</a>
+ </div>
+  <h2 class="title"> <%= data.headline%></h2>
+  <p style="color:#8b0c0c">
+   <%= data.news %>
+  </p>
+  <script>
+    const ops = document.querySelector('#ops');
+    const opsMenu = document.querySelector('#menu')
+    let stat = 'unactive'
+    ops.addEventListener('click',() => {
+      
+      if(stat === 'unactive'){
+      opsMenu.setAttribute('class','ops')
+      stat = 'active';
+      } else {
+        opsMenu.removeAttribute('class','ops')
+         opsMenu.setAttribute('class','ops1')
+        stat = 'unactive'
+      }
+    })
+    //SENDING A DELETE REQUEST
+    const deletebtn = document.querySelector('#delete')
+    deletebtn.addEventListener('click',() => {
+      const endpoint = `/News/${deletebtn.dataset.doc}`;
+   
+      fetch(endpoint,{
+      method:'DELETE'
+    }).then((result) => {
+      if (result.ok) {
+                return result.json();
+            } else {
+              throw new Error('request failed')
+            }
+    })
+    .then((data) => {
+            // Use the retrieved data
+            window.location.href = data.redirect
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    })
+  </script>
+</body>
+</html>

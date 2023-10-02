@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/Blog.css">
+</head>
+
+<body>
+  <!-- Project -->
+    <%- include('./partials/header.ejs') %>
+      
+  
+  <h1 align="center"
+  style="margin-top:60px">Blogs</h1>
+  
+<%  if(blogs.length > 0 ) { %>
+<% blogs.forEach( blog => { %>
+ <a href="/Blogs/<%=blog._id%>">
+   <div class="post">
+    <h3 class="title"><%= blog.title %></h3>
+    <span class="name">Christopher</span>
+    <p> <%= blog.snippet %></p>
+  </div>
+  </a>
+ <% }) %>
+<%  } else { %>
+  
+  <h1 align="center"> No blogs here!</h1>
+<% } %>
+  <script src="/main.js"></script>
+</body>
+</html>
+

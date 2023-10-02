@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>News</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/Blog.css">
+</head>
+
+<body>
+  <!-- Project -->
+    <%- include('./partials/header.ejs') %>
+  
+  <h1 align="center" style="margin-top:60px">News</h1>
+ <% if(news.length > 0) { %>
+<% news.forEach( item => { %>
+   
+ <a href="/News/<%=item._id%>">
+  <div class="post">
+    <h3 class="title"> <%=item.headline %> </h3>
+    <p style="color:red"> <%=item.news %> </p>
+  </div>
+ </a>
+ <% }) %>
+ <% } else { %>
+  <h style="align:center">No posted news 📰</h>
+ <% } %>
+ <script src="/main.js"></script>
+</body>
+</html>
+
