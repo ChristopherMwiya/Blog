@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 5000;
 //      SETTINGS
 app.set('view engine','ejs');
 //      CONNECTING TO MONGOBD
-
-mongoose.connect(process.env.CONNECTION_STRING, {
+const CONNECTION_STRING = "mongodb+srv://chridoio7:test1234@cluster0.4emee4r.mongodb.net/Blogs?retryWrites=true&w=majority"
+mongoose.connect(CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
